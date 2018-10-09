@@ -17,9 +17,9 @@ public abstract class GroupViewHolder extends RecyclerView.ViewHolder implements
 
   private OnGroupClickListener listener;
 
-  public GroupViewHolder(View itemView) {
-    super(itemView);
-    itemView.setOnClickListener(this);
+  public GroupViewHolder(View view) {
+    super(view);
+    view.setOnClickListener(this);
   }
 
   @Override
