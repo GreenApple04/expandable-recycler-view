@@ -5,15 +5,15 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.widget.LinearLayout;
 import com.thoughtbot.expandablerecyclerview.models.ExpandableListPosition;
-import com.thoughtbot.expandablerecyclerview.sample.expand.GenreAdapter;
 import com.thoughtbot.expandablerecyclerview.sample.expand.ArtistViewHolder;
+import com.thoughtbot.expandablerecyclerview.sample.expand.GenreAdapter;
 import com.thoughtbot.expandablerecyclerview.sample.expand.GenreViewHolder;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
-import org.robolectric.RobolectricGradleTestRunner;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
 
@@ -25,7 +25,7 @@ import static junit.framework.Assert.assertTrue;
  * Unit test for GenreAdapter
  */
 
-@RunWith(RobolectricGradleTestRunner.class)
+@RunWith(RobolectricTestRunner.class)
 @Config(constants = BuildConfig.class, sdk = 21)
 public class GenreAdapterTest {
 
@@ -61,7 +61,7 @@ public class GenreAdapterTest {
     GenreAdapter adapter = new GenreAdapter(groups);
 
     //initial state
-    int initialExpected = 6;
+    int initialExpected = 5;
     int initialActual = adapter.getItemCount();
 
     assertEquals(initialExpected, initialActual);

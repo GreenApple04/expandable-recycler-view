@@ -11,7 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
-import org.robolectric.RobolectricGradleTestRunner;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
 
@@ -21,7 +21,7 @@ import static com.thoughtbot.expandablerecyclerview.models.ExpandableListPositio
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
 
-@RunWith(RobolectricGradleTestRunner.class)
+@RunWith(RobolectricTestRunner.class)
 @Config(constants = BuildConfig.class, sdk = 21)
 public class ExpandableListTest {
 
@@ -49,7 +49,7 @@ public class ExpandableListTest {
     assertEquals(initialExpected, initialActual);
 
     //expand first group
-    list.expandedGroupIndexes.put(0, true);
+    list.expandedGroupIndexes[0] = true;
 
     //new state
     int newExpected = 9;
@@ -71,7 +71,7 @@ public class ExpandableListTest {
     assertEquals(initialExpected, initialActual);
 
     //expand first group
-    list.expandedGroupIndexes.put(0, true);
+    list.expandedGroupIndexes[0] = true;
 
     //flatPos 3 == child number 2 within group at index 0
     ExpandableListPosition newExpected = obtain(CHILD, 0, 2, 3);

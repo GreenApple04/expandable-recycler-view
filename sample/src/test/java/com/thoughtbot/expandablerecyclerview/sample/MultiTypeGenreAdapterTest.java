@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
-import org.robolectric.RobolectricGradleTestRunner;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
 
@@ -22,7 +22,7 @@ import static junit.framework.Assert.assertTrue;
  * Unit test for MultiTypeGenreAdapter
  */
 
-@RunWith(RobolectricGradleTestRunner.class)
+@RunWith(RobolectricTestRunner.class)
 @Config(constants = BuildConfig.class, sdk = 21)
 public class MultiTypeGenreAdapterTest {
 
@@ -51,7 +51,7 @@ public class MultiTypeGenreAdapterTest {
 
     //expand first group
     adapter.toggleGroup(0);
-    int newExpected = MultiTypeGenreAdapter.FAVORITE_VIEW_TYPE;
+    int newExpected = MultiTypeGenreAdapter.ARTIST_VIEW_TYPE;
     int newActual = adapter.getItemViewType(3);
 
     assertEquals(newExpected, newActual);
